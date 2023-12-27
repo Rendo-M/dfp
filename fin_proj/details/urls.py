@@ -5,6 +5,6 @@ register_converter(converter.ACLNConverter, "acln")
 urlpatterns = [
     path('', views.index),
     path('list/', views.index),
-    path('<acln:specification>/', views.number)
+    path('<acln:specification>/', views.number, name='number')
 ]
 

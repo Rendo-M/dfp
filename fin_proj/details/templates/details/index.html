@@ -8,8 +8,10 @@
 <body>
     <h1>Список чертежей</h1>
     {{ content }}
+    <ul>
     {% for number in acln %}
-    <a href = {{number}}>{{number}}<br>
-    {% endfor %}
+    <li><a href = {% url "number" number %}>{{number}}<br></li>
+    {% endfor %} 
+    </ul>
 </body>
 </html>
