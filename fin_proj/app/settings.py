@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 185.125.200.156 ]
+ALLOWED_HOSTS = ['127.0.0.1', '185.125.200.156' ]
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
