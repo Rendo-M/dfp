@@ -7,3 +7,4 @@ db.sqlite3
 figs/
 log/
 django.log
+.env
