@@ -22,12 +22,16 @@ import os
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
+DEBUG = True
+if os.getenv('SECRET_KEY'):
+    SECRET_KEY = os.getenv('SECRET_KEY')
+    DEBUG = False
+else:
+    SECRET_KEY = '1212'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '185.125.200.156' ]
+
+ALLOWED_HOSTS = [ '*']
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
@@ -122,10 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-    ]
-STATIC_ROOT = BASE_DIR / 'static/'
+STATICFILES_DIRS = [   BASE_DIR / STATIC_URL,    ] 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
